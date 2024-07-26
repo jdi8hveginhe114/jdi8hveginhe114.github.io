@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一言</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background 0.5s ease;
+        }
+        #content {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        #hitokoto {
+            margin: 20px 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+        #hitokoto_text {
+            text-decoration: none;
+            color: #007BFF;
+            transition: color 0.3s ease;
+            padding: 10px;
+            display: inline-block;
+        }
+        #hitokoto_text:hover {
+            color: #0056b3;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+            #content {
+                padding: 20px;
+            }
+            #hitokoto {
+                font-size: 1.2em;
+            }
+            img {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h2>今日一言</h2>
+        <p id="hitokoto">
+            <a href="#" id="hitokoto_text">正在加载一言...</a>
+        </p>
+        <script>
+            // 获取当前时间并设置背景颜色
+            function setBackgroundByTime() {
+                const now = new Date();
+                const hours = now.getHours();
+                let gradient;
+
+                if (hours >= 6 && hours < 12) {
+                    gradient = 'linear-gradient(135deg, #FFFACD, #FFE4B5)'; // 早晨，淡黄色渐变
+                } else if (hours >= 12 && hours < 14) {
+                    gradient = 'linear-gradient(135deg, #E0FFFF, #AFEEEE)'; // 中午，浅蓝色渐变
+                } else if (hours >= 14 && hours < 18) {
+                    gradient = 'linear-gradient(135deg, #FFDAB9, #FFA07A)'; // 下午，浅橙色渐变
+                } else if (hours >= 18 || hours < 6) {
+                    gradient = 'linear-gradient(135deg, #191970, #4169E1)'; // 晚上，深蓝色渐变
+                }
+
+                document.body.style.background = gradient;
+            }
+            // 初始设置背景颜色
+            setBackgroundByTime();
+
+            // 加载一言
+            fetch('https://v1.hitokoto.cn')
+                .then(response => response.json())
+                .then(data => {
+                    const hitokoto = document.querySelector('#hitokoto_text');
+                    hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`;
+                    hitokoto.innerText = data.hitokoto;
+                })
+                .catch(console.error);
+        </script>
+        <h2>今日诗词</h2>
+        <span id="jinrishici-sentence">正在加载今日诗词....</span>
+        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    </div>
+</body>
+</html>
