@@ -1,366 +1,167 @@
-/* utils function */
-import { navbarShrink } from "./layouts/navbarShrink.js";
-import { initTOC } from "./layouts/toc.js";
-import { main } from "./main.js";
-import imageViewer from "./tools/imageViewer.js";
+(function ($) {
+  "use strict";
 
-export const navigationState = {
-  isNavigating: false,
-};
-
-export default function initUtils() {
-  const utils = {
-    html_root_dom: document.querySelector("html"),
-    pageContainer_dom: document.querySelector(".page-container"),
-    pageTop_dom: document.querySelector(".main-content-header"),
-    homeBanner_dom: document.querySelector(".home-banner-container"),
-    homeBannerBackground_dom: document.querySelector(".home-banner-background"),
-    scrollProgressBar_dom: document.querySelector(".scroll-progress-bar"),
-    pjaxProgressBar_dom: document.querySelector(".pjax-progress-bar"),
-    backToTopButton_dom: document.querySelector(".tool-scroll-to-top"),
-    toolsList: document.querySelector(".hidden-tools-list"),
-    toggleButton: document.querySelector(".toggle-tools-list"),
-
-    innerHeight: window.innerHeight,
-    pjaxProgressBarTimer: null,
-    prevScrollValue: 0,
-    fontSizeLevel: 0,
-    triggerViewHeight: 0.5 * window.innerHeight,
-
-    isHasScrollProgressBar: theme.global.scroll_progress.bar === true,
-    isHasScrollPercent: theme.global.scroll_progress.percentage === true,
-
-    // Scroll Style
-    updateScrollStyle() {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-      const scrollHeight = document.documentElement.scrollHeight;
-      const clientHeight =
-        window.innerHeight || document.documentElement.clientHeight;
-      const percent = this.calculatePercentage(
-        scrollTop,
-        scrollHeight,
-        clientHeight,
-      );
-
-      this.updateScrollProgressBar(percent);
-      this.updateScrollPercent(percent);
-      this.updatePageTopVisibility(scrollTop, clientHeight);
-
-      this.prevScrollValue = scrollTop;
-    },
-
-    updateScrollProgressBar(percent) {
-      if (this.isHasScrollProgressBar) {
-        const progressPercent = percent.toFixed(3);
-        const visibility = percent === 0 ? "hidden" : "visible";
-
-        this.scrollProgressBar_dom.style.visibility = visibility;
-        this.scrollProgressBar_dom.style.width = `${progressPercent}%`;
-      }
-    },
-
-    updateScrollPercent(percent) {
-      if (this.isHasScrollPercent) {
-        const percentDom = this.backToTopButton_dom.querySelector(".percent");
-        const showButton = percent !== 0 && percent !== undefined;
-
-        this.backToTopButton_dom.classList.toggle("show", showButton);
-        percentDom.innerHTML = percent.toFixed(0);
-      }
-    },
-
-    updatePageTopVisibility(scrollTop, clientHeight) {
-      if (theme.navbar.auto_hide) {
-        const prevScrollValue = this.prevScrollValue;
-        const hidePageTop =
-          prevScrollValue > clientHeight && scrollTop > prevScrollValue;
-
-        this.pageTop_dom.classList.toggle("hide", hidePageTop);
-      } else {
-        this.pageTop_dom.classList.remove("hide");
-      }
-    },
-
-    calculatePercentage(scrollTop, scrollHeight, clientHeight) {
-      return Math.round((scrollTop / (scrollHeight - clientHeight)) * 100);
-    },
-
-    // register window scroll event
-    registerWindowScroll() {
-      window.addEventListener("scroll", () => {
-        this.updateScrollStyle();
-        this.updateTOCScroll();
-        this.updateNavbarShrink();
-        // this.updateHomeBannerBlur();
-        this.updateAutoHideTools();
-      });
-      window.addEventListener(
-        "scroll",
-        this.debounce(() => this.updateHomeBannerBlur(), 20),
-      );
-    },
-
-    updateTOCScroll() {
-      if (
-        theme.articles.toc.enable &&
-        initTOC().hasOwnProperty("updateActiveTOCLink")
-      ) {
-        initTOC().updateActiveTOCLink();
-      }
-    },
-
-    updateNavbarShrink() {
-      if (!navigationState.isNavigating) {
-        navbarShrink.init();
-      }
-    },
-
-    debounce(func, delay) {
-      let timer;
+  ZHAOO.utils = {
+    debounce: function (func, wait, immediate) {
+      var timeout;
       return function () {
-        clearTimeout(timer);
-        timer = setTimeout(() => func.apply(this, arguments), delay);
-      };
-    },
-
-    updateHomeBannerBlur() {
-      if (!this.homeBannerBackground_dom) return;
-
-      if (
-        theme.home_banner.style === "fixed" &&
-        location.pathname === config.root
-      ) {
-        const scrollY = window.scrollY || window.pageYOffset;
-        const blurValue = scrollY >= this.triggerViewHeight ? 15 : 0;
-
-        try {
-          requestAnimationFrame(() => {
-            this.homeBannerBackground_dom.style.filter = `blur(${blurValue}px)`;
-            this.homeBannerBackground_dom.style.webkitFilter = `blur(${blurValue}px)`;
-          });
-        } catch (e) {
-          // Handle or log the error properly
-          console.error("Error updating banner blur:", e);
-        }
-      }
-    },
-
-    updateAutoHideTools() {
-      const y = window.scrollY;
-      const height = document.body.scrollHeight;
-      const windowHeight = window.innerHeight;
-      const toolList = document.getElementsByClassName(
-        "right-side-tools-container",
-      );
-      const aplayer = document.getElementById("aplayer");
-
-      for (let i = 0; i < toolList.length; i++) {
-        const tools = toolList[i];
-        if (y <= 100) {
-          if (location.pathname === config.root) {
-            tools.classList.add("hide");
-            if (aplayer !== null) {
-              aplayer.classList.add("hide");
-            }
-          }
-        } else if (y + windowHeight >= height - 20) {
-          tools.classList.add("hide");
-          if (aplayer !== null) {
-            aplayer.classList.add("hide");
-          }
+        var context = this;
+        var args = arguments;
+        timeout && clearTimeout(timeout);
+        if (immediate) {
+          var callNow = !timeout;
+          timeout = setTimeout(function () {
+            timeout = null;
+          }, wait);
+          if (callNow) func.apply(context, args);
         } else {
-          tools.classList.remove("hide");
-          if (aplayer !== null) {
-            aplayer.classList.remove("hide");
-          }
+          timeout = setTimeout(function () {
+            func.apply(context, args);
+          }, wait);
         }
       }
     },
+    throttle: function (func, wait, options) {
+      var timeout, context, args;
+      var previous = 0;
+      if (!options) options = {};
+      var later = function () {
+        previous = options.leading === false ? 0 : new Date().getTime();
+        timeout = null;
+        func.apply(context, args);
+        if (!timeout) context = args = null;
+      }
+      var throttled = function () {
+        var now = new Date().getTime();
+        if (!previous && options.leading === false) previous = now;
+        var remaining = wait - (now - previous);
+        context = this;
+        args = arguments;
+        if (remaining <= 0 || remaining > wait) {
+          if (timeout) {
+            clearTimeout(timeout);
+            timeout = null;
+          }
+          previous = now;
+          func.apply(context, args);
+          if (!timeout) context = args = null;
+        } else if (!timeout && options.trailing !== false) {
+          timeout = setTimeout(later, remaining);
+        }
+      }
+      return throttled;
+    },
+    hasMobileUA: function () {
+      var nav = window.navigator;
+      var ua = nav.userAgent;
+      var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+      return pa.test(ua);
+    },
+    isTablet: function () {
+      return (
+        window.screen.width > 767 &&
+        window.screen.width < 992 &&
+        this.hasMobileUA()
+      );
+    },
+    isMobile: function () {
+      return window.screen.width < 767 && this.hasMobileUA();
+    },
+    isDesktop: function () {
+      return !this.isTablet() && !this.isMobile();
+    },
+    isDuringDate: function (beginDateStr, endDateStr) {
+      var curDate = new Date(),
+        beginDate = new Date(beginDateStr),
+        endDate = new Date(endDateStr);
+      if (curDate >= beginDate && curDate <= endDate) {
+        return true;
+      }
+      return false;
+    },
+    bindKeyup: function (code, fn) {
+      $(document).keyup(function (e) {
+        var key = e.which || e.keyCode;;
+        if (key == code) {
+          fn();
+        }
+      });
+    }
+  }
 
-    toggleToolsList() {
-      this.toggleButton.addEventListener("click", () => {
-        this.toolsList.classList.toggle("show");
+  ZHAOO.zui = {
+    message: function ({ text, type, delay }) {
+      var message = '<div class="zui-message ' + (type || "info") + '"><p>' + text + '</p></div>';
+      $("body").append(message);
+      var e = $(".zui-message");
+      e.ready(function () {
+        e.addClass("in");
+        setTimeout(function () {
+          e.removeClass("in");
+          e.on("transitionend webkitTransitionEnd", function () {
+            $(this).remove();
+          });
+        }, delay || 3000);
       });
     },
-
-    fontAdjPlus_dom: document.querySelector(".tool-font-adjust-plus"),
-    fontAdMinus_dom: document.querySelector(".tool-font-adjust-minus"),
-    globalFontSizeAdjust() {
-      const htmlRoot = this.html_root_dom;
-      const fontAdjustPlus = this.fontAdjPlus_dom;
-      const fontAdjustMinus = this.fontAdMinus_dom;
-
-      const fontSize = document.defaultView.getComputedStyle(
-        document.body,
-      ).fontSize;
-      const baseFontSize = parseFloat(fontSize);
-
-      let fontSizeLevel = 0;
-      const styleStatus = main.getStyleStatus();
-      if (styleStatus) {
-        fontSizeLevel = styleStatus.fontSizeLevel;
-        setFontSize(fontSizeLevel);
-      }
-
-      function setFontSize(level) {
-        const fontSize = baseFontSize * (1 + level * 0.05);
-        htmlRoot.style.fontSize = `${fontSize}px`;
-        main.styleStatus.fontSizeLevel = level;
-        main.setStyleStatus();
-      }
-
-      function increaseFontSize() {
-        fontSizeLevel = Math.min(fontSizeLevel + 1, 5);
-        setFontSize(fontSizeLevel);
-      }
-
-      function decreaseFontSize() {
-        fontSizeLevel = Math.max(fontSizeLevel - 1, 0);
-        setFontSize(fontSizeLevel);
-      }
-
-      fontAdjustPlus.addEventListener("click", increaseFontSize);
-      fontAdjustMinus.addEventListener("click", decreaseFontSize);
-    },
-    // go comment anchor
-    goComment() {
-      this.goComment_dom = document.querySelector(".go-comment");
-      if (this.goComment_dom) {
-        this.goComment_dom.addEventListener("click", () => {
-          const target = document.querySelector("#comment-anchor");
-          if (target) {
-            const offset = target.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({
-              top: offset,
-              behavior: "smooth",
-            });
+    notification: function ({ title, content, type, delay }) {
+      var storage = JSON.parse(localStorage.getItem("notification-closed"));
+      if (storage && storage.indexOf(title) >= 0) return;
+      var notification = '<div class="zui-notification ' + (type || "info") + '"><span>' + title + '</span><p>' + content + '</p><i class="j-notification-close iconfont iconbaseline-close-px"></i></div>';
+      $("body").append(notification);
+      var e = $(".zui-notification");
+      var close = $(".j-notification-close");
+      e.ready(function () {
+        e.addClass("in");
+        setTimeout(function () {
+          e.removeClass("in");
+          e.on("transitionend webkitTransitionEnd", function () {
+            $(this).remove();
+          });
+        }, delay || 3000);
+        close.on("click", function () {
+          e.removeClass("in");
+          if (storage) {
+            (storage.indexOf(title) < 0) && localStorage.setItem("notification-closed", JSON.stringify(storage.concat(title)));
+          } else {
+            localStorage.setItem("notification-closed", JSON.stringify([title]));
           }
         });
+      });
+    }
+  }
+
+})(jQuery);
+
+class AsyncLimit {
+  constructor(limit) {
+    this.limit = Number(limit) || 2;
+    this.pool = [];
+    this.current = 0;
+  }
+
+  async run(fn) {
+    if (!fn || typeof fn !== 'function') {
+      throw new Error('Function error.');
+    }
+    if (this.current >= this.limit) {
+      await new Promise(resolve => this.pool.push(resolve));
+    }
+    return this._handleRun(fn);
+  }
+
+  async _handleRun(fn) {
+    this.current++;
+    try {
+      return await fn();
+    } catch (err) {
+      return Promise.reject(err);
+    } finally {
+      this.current--;
+      if (this.pool.length) {
+        this.pool[0]();
+        this.pool.shift();
       }
-    },
-
-    // get dom element height
-    getElementHeight(selectors) {
-      const dom = document.querySelector(selectors);
-      return dom ? dom.getBoundingClientRect().height : 0;
-    },
-
-    // init first screen height
-    inithomeBannerHeight() {
-      this.homeBanner_dom &&
-        (this.homeBanner_dom.style.height = this.innerHeight + "px");
-    },
-
-    // init page height handle
-    initPageHeightHandle() {
-      if (this.homeBanner_dom) return;
-      const temp_h1 = this.getElementHeight(".main-content-header");
-      const temp_h2 = this.getElementHeight(".main-content-body");
-      const temp_h3 = this.getElementHeight(".main-content-footer");
-      const allDomHeight = temp_h1 + temp_h2 + temp_h3;
-      const innerHeight = window.innerHeight;
-      const pb_dom = document.querySelector(".main-content-footer");
-      if (allDomHeight < innerHeight) {
-        const marginTopValue = Math.floor(innerHeight - allDomHeight);
-        if (marginTopValue > 0) {
-          pb_dom.style.marginTop = `${marginTopValue - 2}px`;
-        }
-      }
-    },
-
-    // set how long ago language
-    setHowLongAgoLanguage(p1, p2) {
-      return p2.replace(/%s/g, p1);
-    },
-
-    getHowLongAgo(timestamp) {
-      const l = lang_ago;
-
-      const __Y = Math.floor(timestamp / (60 * 60 * 24 * 30) / 12);
-      const __M = Math.floor(timestamp / (60 * 60 * 24 * 30));
-      const __W = Math.floor(timestamp / (60 * 60 * 24) / 7);
-      const __d = Math.floor(timestamp / (60 * 60 * 24));
-      const __h = Math.floor((timestamp / (60 * 60)) % 24);
-      const __m = Math.floor((timestamp / 60) % 60);
-      const __s = Math.floor(timestamp % 60);
-
-      if (__Y > 0) {
-        return this.setHowLongAgoLanguage(__Y, l.year);
-      } else if (__M > 0) {
-        return this.setHowLongAgoLanguage(__M, l.month);
-      } else if (__W > 0) {
-        return this.setHowLongAgoLanguage(__W, l.week);
-      } else if (__d > 0) {
-        return this.setHowLongAgoLanguage(__d, l.day);
-      } else if (__h > 0) {
-        return this.setHowLongAgoLanguage(__h, l.hour);
-      } else if (__m > 0) {
-        return this.setHowLongAgoLanguage(__m, l.minute);
-      } else if (__s > 0) {
-        return this.setHowLongAgoLanguage(__s, l.second);
-      }
-    },
-
-    relativeTimeInHome() {
-      const post = document.querySelectorAll(
-        ".home-article-meta-info .home-article-date",
-      );
-      const df = theme.home.article_date_format;
-      if (df === "relative") {
-        post &&
-          post.forEach((v) => {
-            const nowDate = Date.now();
-            const postDate = new Date(
-              v.dataset.date.split(" GMT")[0],
-            ).getTime();
-            v.innerHTML = this.getHowLongAgo(
-              Math.floor((nowDate - postDate) / 1000),
-            );
-          });
-      } else if (df === "auto") {
-        post &&
-          post.forEach((v) => {
-            const nowDate = Date.now();
-            const postDate = new Date(
-              v.dataset.date.split(" GMT")[0],
-            ).getTime();
-            const finalDays = Math.floor(
-              (nowDate - postDate) / (60 * 60 * 24 * 1000),
-            );
-            if (finalDays < 7) {
-              v.innerHTML = this.getHowLongAgo(
-                Math.floor((nowDate - postDate) / 1000),
-              );
-            }
-          });
-      }
-    },
-  };
-
-  utils.updateAutoHideTools();
-
-  // init scroll
-  utils.registerWindowScroll();
-
-  // toggle show tools list
-  utils.toggleToolsList();
-
-  // main font adjust
-  utils.globalFontSizeAdjust();
-
-  // go comment
-  utils.goComment();
-
-  // init page height handle
-  utils.initPageHeightHandle();
-
-  // init first screen height
-  utils.inithomeBannerHeight();
-
-  // set how long ago in home article block
-  utils.relativeTimeInHome();
-
-  // image viewer handle
-  imageViewer();
+    }
+  }
 }
