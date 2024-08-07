@@ -1,5 +1,5 @@
 # 2324官网源码
-本站链接<a href="https://2324.us.kg">2324.us.kg</a>
+<a href="https://2324.us.kg">本站链接</a>
 ### 本站开源协议
 本网站采用<a href="https://mit-license.org/">MIT协议</a>开源
 ### 下载在线客户端
