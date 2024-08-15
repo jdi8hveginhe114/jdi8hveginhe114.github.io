@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      关于 | 2324官网
+      本站详情 | 2324官网
     
   </title>
   <meta name="author" content="2324全体成员">
@@ -100,7 +100,7 @@
 	<!-- Page title -->
 	<p>
 		
-			关于
+			本站详情
 		
 	</p>
 
@@ -145,6 +145,11 @@
 	
 		<li class="menu-about">
 			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-developers">
+			<a href="/developers" class="menu-item-developers" target="_blank">开发者</a>
 		</li>
 		
 	
@@ -224,7 +229,7 @@
 
 	
 
-		关于
+		本站详情
 
 	
 	
@@ -233,13 +238,26 @@
 		
 
 			<div>
-				<iframe src="https://docs.qq.com/doc/p/fd09248ea8073a49dd11e7cc8d3748aa03e6b0c5" frameborder="0" scrolling="no" width="50%" height="75%" loading="lazy"></iframe>
-<style type="text/css">iframe { position: absolute; width: 50%; height: 75%; z-index: 999; }</style>
+				<div style="text-align: center;">
+  <iframe id="responsiveIframe" src="https://docs.qq.com/doc/p/fd09248ea8073a49dd11e7cc8d3748aa03e6b0c5" style="border:none; overflow:hidden; display: block; margin: 0 auto;" scrolling="no"></iframe>
+</div>
 
-<section>
-    <h1>关于本站</h1>
-    <p>本站托管在GitHub上，由cloudflare提供DNS解析，网站服务器在美国，完全遵守“非经营性互联网信息服务备案管理办法”第五条的规定，可以合法在境内访问，但由于服务器地址原因，访问速度有限，但不影响正常使用</p>
-</section>
+<script>
+  function adjustIframeSize() {
+    var iframe = document.getElementById('responsiveIframe');
+    var width = window.innerWidth * 0.8; // 80% of the screen width
+    var height = window.innerHeight * 0.8; // 80% of the screen height
+    iframe.width = width;
+    iframe.height = height;
+  }
+
+  // Adjust size on page load
+  window.onload = adjustIframeSize;
+
+  // Adjust size on window resize
+  window.onresize = adjustIframeSize;
+</script>
+
 <section>
     <h2>开发者详情</h2>
     <ul>
@@ -251,7 +269,7 @@
         <h4>提供部分技术支持</h4>
         <a target="_blank" rel="noopener" href="https://github.com/TimeFish-yu">github开发者账号</a>
     </ul>
-</section>
+</section> 
 			</div>
 
 		
@@ -289,6 +307,11 @@
 	
 		<li class="menu-about">
 			<a href="/about" class="menu-item-about" target="_blank">关于</a>
+		</li>
+		
+	
+		<li class="menu-developers">
+			<a href="/developers" class="menu-item-developers" target="_blank">开发者</a>
 		</li>
 		
 	
