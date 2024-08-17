@@ -1,244 +1,10 @@
-<!--
-	作者：Sariay
-	时间：2018-08-26
-	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
--->
 <!DOCTYPE html>
-<html class="html-loading">
-		
-
-<head>
-	<meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-  <title>
-    
-      本站详情 | 2324官网
-    
-  </title>
-  <meta name="author" content="2324全体成员">
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-	<!-- favicon -->
-  <link rel="shortcut icon" href="/img/favicon.ico">
-
-  <!-- css -->
-  
-<link rel="stylesheet" href="/css/Annie.css">
-
-  
-  <!-- jquery -->
-	
-<script src="/plugin/jquery/jquery.min.js"></script>
-
-
-<script>
-    const CONFIG_BGIMAGE = {
-      mode: 'normal',
-      normalSrc: '/img/header-bg.jpg',
-      randomYouMax: 110,
-      randomYouSrc: 'https://sariay.github.io/Random-img/',
-	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
-	  preloaderEnable: true
-    }
-	
-    const CONFIG_LEACLOUD_COUNT = {
-      enable: false,
-	  appId: 'AU8...',
-	  appKey: '4cU...',
-	  serverURLs: 'http' || ' '
-    }
-  </script>
-<meta name="generator" content="Hexo 7.3.0"></head>
-	<body>
-		<!-- Preloader -->
-
-	<div id="preloader">
-		<div class="pre-container">
-			
-				<div class="spinner">
-					<div class="double-bounce1"></div>
-					<div class="double-bounce2"></div>
-				</div>
-						
-		</div>
-	</div>
-
-
-<!-- header -->
-<header class="fixbackground bg-pan-br">
-	<div class="mask">
-		<!-- motto -->
-		<div class="h-body">	
-			
-				<div class="motto text-shadow-pop-left">
-					<p class="content" id="motto-content">获取中...</p>
-					<p>-<p>
-					<p class="author" id="motto-author">Just a minute...</p>
-				</div>
-			
-		</div>
-		
-		<!-- others: such as time... -->			
-		<div class="h-footer">
-			<a href="javascript:;" id="read-more" class="scroll-down">
-				<span class="icon-anchor1 animation-scroll-down"></span>
-			</a>
-		</div>
-	</div>
-</header>
-
-<div id="navigation-hide">
-	<!-- Progress bar -->
-	<div id="progress-bar"></div>
-
-	<!-- Progress percent -->
-	<div id="progress-percentage"><span>0.0%</span></div>
-
-	<div class="toc-switch"><span class="switch-button">目录</span></div>
-
-	<!-- Page title -->
-	<p>
-		
-			本站详情
-		
-	</p>
-
-	
-	
-
-	<!-- Nav trigger for navigation-H-->
-	<a class="nav-trigger"><span></span></a>
-</div>
-
-<!-- Navigation in div(id="navigation-H") -->
-<nav class="nav-container" id="cd-nav">
-	<div class="nav-header">
-		<span class="logo"> 
-			<img src="/img/logo.png">
-		</span>
-		<a href="javascript:;" class="nav-close"></a>
-	</div>
-	
-	<div class="nav-body">
-		<ul id="global-nav">
-	
-		<li class="menu-home">
-			<a href="/" class="menu-item-home" target="_blank">主页</a>
-		</li>
-		
-	
-		<li class="menu-archive">
-			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
-		</li>
-		
-	
-		<li class="menu-categories">
-			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
-		</li>
-		
-	
-		<li class="menu-tags">
-			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
-		</li>
-		
-	
-		<li class="menu-about">
-			<a href="/about" class="menu-item-about" target="_blank">服务条款</a>
-		</li>
-		
-	
-		<li class="menu-developers">
-			<a href="/developers" class="menu-item-developers" target="_blank">开发者</a>
-		</li>
-		
-	
-		<li class="menu-gallery">
-			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
-		</li>
-		
-	
-
-	
-</ul>
-	</div>
-	
-	<div class="nav-footer">
-		<ul id="global-social">
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-one"><span class="path1"></span><span class="path2"></span></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-zhihu"></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-github"></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-sina-weibo "></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-pinterest2"></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-instagram"></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-twitter"></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="/atom.xml" target="_blank">
-				<span class="icon-rss"></span>
-			</a>
-		</li>
-			
-</ul>
-
-	</div>
-</nav>
-			
-		<!--main-->
-		<main>
-			<!--content start-->
-<div class="layout-page">	
-	<div class="layout-page-container">
-
-		<div class="layout-page-header">
-
-	
-
-		本站详情
-
-	
-	
-</div>
-
-		
-
-			<div>
-				<style>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>用户服务条款</title>
+        <style>
             html,
             body {
                 background-color: #f6f8f9;
@@ -397,7 +163,7 @@
                 border-radius: 4px;
             }
             @media screen and (max-width: 760px) {
-                .container{
+            	.container{
                     padding: 0;
                 }
                 .main{
@@ -410,8 +176,11 @@
                         margin-left: 1.2em;
                 }
             }
-</style>
-<div class="main">
+        </style>
+    </head>
+
+    <body>
+        <div class="main">
             <div class="container">
                 <h1 class="title">用户服务条款</h1>
                 <div class="content">
@@ -475,7 +244,7 @@
                         <div class="orderly-list-item">
                             <span class="index">三.</span>
                             <p class="orderly-list-item-desc">权利和义务</p>
-                            <p class="orderly-list-item-desc">（一）您必须同意遵守包括但不仅限于<a target="_blank" rel="noopener" href="https://www.ssf.gov.cn/portal/rootfiles/2024/03/25/1713038527579105-1713038527601412.pdf">《中华人民共和国保守国家秘密法》</a><a target="_blank" rel="noopener" href="https://www.gov.cn/gongbao/content/2011/content_1860849.htm">《中华人民共和国计算机信息系统安全保护条例》</a><a target="_blank" rel="noopener" href="https://ipc.court.gov.cn/zh-cn/news/view-407.html">《计算机软件保护条例》</a><a target="_blank" rel="noopener" href="https://www.gov.cn/gongbao/content/2001/content_61064.htm">《互联网电子公告服务管理规定》</a><a target="_blank" rel="noopener" href="https://www.gov.cn/gongbao/content/2000/content_60531.htm#:~:text=%E4%BA%92%E8%81%94%E7%BD%91%E4%BF%A1%E6%81%AF%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%20%E7%AC%AC%E4%B8%80%E6%9D%A1%20%E4%B8%BA%E4%BA%86%E8%A7%84%E8%8C%83%E4%BA%92%E8%81%94%E7%BD%91%E4%BF%A1%E6%81%AF%E6%9C%8D%E5%8A%A1%E6%B4%BB%E5%8A%A8%EF%BC%8C%E4%BF%83%E8%BF%9B%E4%BA%92%E8%81%94%E7%BD%91%E4%BF%A1%E6%81%AF%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%9C%89%E5%BA%8F%E5%8F%91%E5%B1%95%EF%BC%8C%E5%88%B6%E5%AE%9A%E6%9C%AC%E5%8A%9E%E6%B3%95%E3%80%82,%E7%AC%AC%E4%BA%8C%E6%9D%A1%20%E5%9C%A8%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%A2%83%E5%86%85%E4%BB%8E%E4%BA%8B%E4%BA%92%E8%81%94%E7%BD%91%E4%BF%A1%E6%81%AF%E6%9C%8D%E5%8A%A1%E6%B4%BB%E5%8A%A8%EF%BC%8C%E5%BF%85%E9%A1%BB%E9%81%B5%E5%AE%88%E6%9C%AC%E5%8A%9E%E6%B3%95%E3%80%82%20%E6%9C%AC%E5%8A%9E%E6%B3%95%E6%89%80%E7%A7%B0%E4%BA%92%E8%81%94%E7%BD%91%E4%BF%A1%E6%81%AF%E6%9C%8D%E5%8A%A1%EF%BC%8C%E6%98%AF%E6%8C%87%E9%80%9A%E8%BF%87%E4%BA%92%E8%81%94%E7%BD%91%E5%90%91%E4%B8%8A%E7%BD%91%E7%94%A8%E6%88%B7%E6%8F%90%E4%BE%9B%E4%BF%A1%E6%81%AF%E7%9A%84%E6%9C%8D%E5%8A%A1%E6%B4%BB%E5%8A%A8%E3%80%82">《互联网信息服务管理办法》</a>等在内的法律、法规。</p>
+                            <p class="orderly-list-item-desc">（一）您必须同意遵守包括但不仅限于<a href="https://www.ssf.gov.cn/portal/rootfiles/2024/03/25/1713038527579105-1713038527601412.pdf">《中华人民共和国保守国家秘密法》</a><a href="https://www.gov.cn/gongbao/content/2011/content_1860849.htm">《中华人民共和国计算机信息系统安全保护条例》</a><a href="https://ipc.court.gov.cn/zh-cn/news/view-407.html">《计算机软件保护条例》</a><a href="https://www.gov.cn/gongbao/content/2001/content_61064.htm">《互联网电子公告服务管理规定》</a><a href="https://www.gov.cn/gongbao/content/2000/content_60531.htm#:~:text=%E4%BA%92%E8%81%94%E7%BD%91%E4%BF%A1%E6%81%AF%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%20%E7%AC%AC%E4%B8%80%E6%9D%A1%20%E4%B8%BA%E4%BA%86%E8%A7%84%E8%8C%83%E4%BA%92%E8%81%94%E7%BD%91%E4%BF%A1%E6%81%AF%E6%9C%8D%E5%8A%A1%E6%B4%BB%E5%8A%A8%EF%BC%8C%E4%BF%83%E8%BF%9B%E4%BA%92%E8%81%94%E7%BD%91%E4%BF%A1%E6%81%AF%E6%9C%8D%E5%8A%A1%E5%81%A5%E5%BA%B7%E6%9C%89%E5%BA%8F%E5%8F%91%E5%B1%95%EF%BC%8C%E5%88%B6%E5%AE%9A%E6%9C%AC%E5%8A%9E%E6%B3%95%E3%80%82,%E7%AC%AC%E4%BA%8C%E6%9D%A1%20%E5%9C%A8%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%A2%83%E5%86%85%E4%BB%8E%E4%BA%8B%E4%BA%92%E8%81%94%E7%BD%91%E4%BF%A1%E6%81%AF%E6%9C%8D%E5%8A%A1%E6%B4%BB%E5%8A%A8%EF%BC%8C%E5%BF%85%E9%A1%BB%E9%81%B5%E5%AE%88%E6%9C%AC%E5%8A%9E%E6%B3%95%E3%80%82%20%E6%9C%AC%E5%8A%9E%E6%B3%95%E6%89%80%E7%A7%B0%E4%BA%92%E8%81%94%E7%BD%91%E4%BF%A1%E6%81%AF%E6%9C%8D%E5%8A%A1%EF%BC%8C%E6%98%AF%E6%8C%87%E9%80%9A%E8%BF%87%E4%BA%92%E8%81%94%E7%BD%91%E5%90%91%E4%B8%8A%E7%BD%91%E7%94%A8%E6%88%B7%E6%8F%90%E4%BE%9B%E4%BF%A1%E6%81%AF%E7%9A%84%E6%9C%8D%E5%8A%A1%E6%B4%BB%E5%8A%A8%E3%80%82">《互联网信息服务管理办法》</a>等在内的法律、法规。</p>
                             <br>
                             <p class="orderly-list-item-desc">（二）您有义务提供完整、真实、的个人信息，信息如有变更，应及时更新。</p>
                             <br>
@@ -524,18 +293,18 @@
                 </div>
                 <div class="content">
                     <h2 class="content-title">开源协议</h2>
-                    <p class="desc">本网站采用<a target="_blank" rel="noopener" href="https://mit-license.org/">MIT</a>开源协议，该协议没有对使用该开源项目的用户进行任何限制(未来可能会做出更改)</p>
+                    <p class="desc">本网站采用<a href="https://mit-license.org/">MIT</a>开源协议，该协议没有对使用该开源项目的用户进行任何限制(未来可能会做出更改)</p>
                     <p class="orderly-list-item-desc">本站开源仓库地址为:</p>
                     <br>
-                    <p class="orderly-list-item-desc">github:<a target="_blank" rel="noopener" href="https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io">https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io</a></p>
+                    <p class="orderly-list-item-desc">github:<a href="https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io">https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io</a></p>
                     <br>
-                    <p class="orderly-list-item-desc">gitee:<a target="_blank" rel="noopener" href="https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io">https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io</a></p>
+                    <p class="orderly-list-item-desc">gitee:<a href="https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io">https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io</a></p>
                 </div>
                 <div class="content">
                     <h2 class="content-title">关于本站与开发者详情</h2>
                     <p class="orderly-list-item-desc">关于本站</p>
                     <p class="orderly-list-item-desc">
-                        本站托管在<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>上，由<a target="_blank" rel="noopener" href="https://cloudflare.com"></a>提供DNS解析，网站服务器在美国，完全遵守“<a target="_blank" rel="noopener" href="https://www.moj.gov.cn/pub/sfbgw/flfggz/flfggzbmgz/200504/t20050412_143918.html">非经营性互联网信息服务备案管理办法</a>”第五条的规定，可以合法在境内访问，因为服务器地址原因，访问速度可能较慢，但是并不影响正常使用
+                        本站托管在<a href="https://github.com/">GitHub</a>上，由<a href="https://cloudflare.com"></a>提供DNS解析，网站服务器在美国，完全遵守“<a href="https://www.moj.gov.cn/pub/sfbgw/flfggz/flfggzbmgz/200504/t20050412_143918.html">非经营性互联网信息服务备案管理办法</a>”第五条的规定，可以合法在境内访问，因为服务器地址原因，访问速度可能较慢，但是并不影响正常使用
                     </p>
                     <p class="orderly-list-item-desc">开发者详情</p>
                     <p class="orderly-list-item-desc">
@@ -544,165 +313,6 @@
                 </div>
                 <div class="msg">如果您对此条款有任何疑问或建议，欢迎通过邮件联系我们：2324@2324.us.kg</div>
             </div>
-</div>
-			</div>
-
-		
-	</div>
-
-	
-</div>
-
-		</main>
-
-		<!--footer-->
-		<footer>
-	<div id="navigation-show">
-		<ul id="global-nav">
-	
-		<li class="menu-home">
-			<a href="/" class="menu-item-home" target="_blank">主页</a>
-		</li>
-		
-	
-		<li class="menu-archive">
-			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
-		</li>
-		
-	
-		<li class="menu-categories">
-			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
-		</li>
-		
-	
-		<li class="menu-tags">
-			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
-		</li>
-		
-	
-		<li class="menu-about">
-			<a href="/about" class="menu-item-about" target="_blank">服务条款</a>
-		</li>
-		
-	
-		<li class="menu-developers">
-			<a href="/developers" class="menu-item-developers" target="_blank">开发者</a>
-		</li>
-		
-	
-		<li class="menu-gallery">
-			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
-		</li>
-		
-	
-
-	
-</ul>
-	</div>
-
-	<div class="copyright">
-		<p>
-			 
-				&copy;2017 - 2024, content by Sariay. All Rights Reserved.
-			
-			
-				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
-			
-		</p>
-		<p>
-			
-
-	<!-- busuanzi -->
-	<!-- busuanzi -->
-
-
-
-			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
-			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
-		</p>
-	</div>		
-</footer>
-		
-	<!-- Local or hitokoto! -->
-
-	
-<script src="/plugin/motto/motto.js"></script>
-
-	
-	<script type="text/javascript">
-		(function motto(){
-			let mottoText = getMingYanContent().split('</br> - </br>'),
-			
-			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
-			
-			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
-			
-			mottoTextContent = mottoTextContent.trim().substring(0, 100);
-		
-			$("#motto-content").html( mottoTextContent);
-			$("#motto-author").html( mottoTextFrom  );
-		})();	
-	</script>	
-
-
-
-<!-- love effect -->
-
-
-<!-- back to top -->
-
-	<div id="totop">
-	<span class="icon-circle-up"></span>
-</div>
-
-
-
-<!-- site analysis -->
-
-
-	<!-- site-analysis -->
-	
-	
-	
-	
-	
- 
-
-<!-- leancloud -->
-
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-	
-
-  
-
-
-
-<script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imagelazyloader/yall.min.js"></script>
-<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
-<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/plugin/resizediv/resizediv.js"></script>
-<script src="/js/main.js"></script>
-
-	</body>	
+        </div>
+    </body>
 </html>
