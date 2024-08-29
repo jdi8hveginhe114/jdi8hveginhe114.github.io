@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日运气</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .result {
+            font-size: 24px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>今日运气</h1>
+    <div class="result" id="result"></div>
+    <script>
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function displayLuck() {
+            let luck = localStorage.getItem('todayLuck');
+            if (!luck) {
+                luck = getRandomInt(1, 100);
+                localStorage.setItem('todayLuck', luck);
+            }
+            let resultElement = document.getElementById('result');
+            if (luck < 30) {
+                resultElement.textContent = `你的运气是 ${luck}，今天可能不太顺利，加油！`;
+            } else if (luck >= 30 && luck < 70) {
+                resultElement.textContent = `你的运气是 ${luck}，今天运气一般，保持平常心。`;
+            } else {
+                resultElement.textContent = `你的运气是 ${luck}，今天运气不错，好好把握机会！`;
+            }
+        }
+
+        displayLuck();
+    </script>
+</body>
+</html>
