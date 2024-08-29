@@ -5,180 +5,80 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
         <title>用户服务条款</title>
         <style>
-            html,
-            body {
+            html, body {
                 background-color: #f6f8f9;
+                font-family: 'Open Sans', sans-serif;
             }
-
+    
             .main {
                 background-color: #ffffff;
                 width: 90%;
                 max-width: 1600px;
-                margin-left: auto;
-                margin-right: auto;
+                margin: 20px auto;
                 padding: 24px 40px;
-                padding-bottom: 400px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
             }
-
+    
             .container {
-                padding: 90px 75px;
+                padding: 40px 20px;
             }
-
-            p {
-                -webkit-margin-before: 0;
-                -webkit-margin-after: 0;
-                line-height: 24px;
-                font-size: 16px;
-            }
-            li{
-                line-height: 24px;
-            }
-
-            .desc {
-                text-align: left;
-                font-size: 16px;
-            }
-
-            .title {
+    
+            h1.title {
                 text-align: center;
-                font-size: 22px;
-                padding-bottom: 40px;
+                font-size: 28px;
+                color: #333;
+                margin-bottom: 40px;
             }
-
-            .content-title {
-                text-align: left;
-                font-size: 20px;
+    
+            h2.content-title {
+                font-size: 24px;
+                color: #444;
+                border-bottom: 2px solid #ddd;
+                padding-bottom: 10px;
+                margin-top: 40px;
             }
-
-            .list {
-                list-style: none;
+    
+            p, li {
+                font-size: 18px;
+                line-height: 1.6;
+                color: #555;
             }
-
-            .content-list-item {
-                text-indent: 2em;
+    
+            ul {
+                list-style-type: disc;
+                padding-left: 40px;
             }
-
-            .orderly-list-item {
-                margin-left: 2em;
-                position: relative;
+    
+            a {
+                color: #007BFF;
+                text-decoration: none;
+                transition: color 0.3s;
             }
-
-            .orderly-list-item .index {
-                position: absolute;
+    
+            a:hover {
+                color: #0056b3;
             }
-
-            .orderly-list-item-desc {
-                display: inline-block;
-                position: relative;
-                left: 1.2em;
-                padding-right: 2em;
-            }
-
-            .footer {
-                text-align: right;
-                padding-top: 40px;
-            }
-
-            .list-item-inner {
-                position: relative;
-                margin-left: 2em;
-                padding-right: 2em;
-            }
-
-            .index-inner {
-                position: absolute;
-            }
-
-            .list-item-desc-inner {
-                display: inline-block;
-                position: relative;
-                left: 1em;
-            }
-
-            .content .desc {
-                text-indent: 2em;
-            }
-
-            .informal {
-                padding-top: 40px;
-            }
-
-            .table {
-                width: 1400px;
-                margin: 0 auto;
-                white-space: normal;
-                position: relative;
-            }
-
-            .table-row {
-                margin: 0;
-                padding: 0;
-                border-left: 1px dashed #778899;
-                border-top: 1px dashed #778899;
-                position: relative;
-                white-space: normal;
-                position: absolute;
-            }
-
-            .table-column {
-                text-align: left;
-                font-size: 17px;
-                display: inline-block;
-                margin: 0;
-                padding: 15px 15px;
-                border-right: 1px dashed #778899;
-                border-bottom: 1px dashed #778899;
-                position: relative;
-                width: 670px;
-                background: 0 0;
-                white-space: normal;
-            }
-
-            .table-row.left .table-column {
-                border-right: none;
-            }
-
-            .table-row.right {
-                left: 700px;
-            }
-
-            .gaizhang {
-                height: 100px;
-            }
-
-            .qianming {
-                height: 60px;
-            }
-
-            .inner-span {
-                padding-left: 2em;
-            }
-            .msg{
+    
+            .msg {
                 background-color: #fcf8e3;
-                border-color: #faebcc;
+                border: 1px solid #faebcc;
                 color: #8a6d3b;
                 padding: 15px;
-                margin-bottom: 20px;
-                border: 1px solid transparent;
+                margin-top: 40px;
                 border-radius: 4px;
+                text-align: center;
             }
+    
             @media screen and (max-width: 760px) {
-            	.container{
-                    padding: 0;
-                }
-                .main{
+                .main {
                     padding: 24px;
-                    box-sizing: border-box;
-                    margin: 0;
                     width: 100%;
-                }
-                .orderly-list-item{
-                        margin-left: 1.2em;
+                    box-sizing: border-box;
                 }
             }
         </style>
     </head>
-
     <body>
         <div class="main">
             <div class="container">
@@ -291,7 +191,7 @@
                     <li>协议的条款如与法律相抵触，本网站可进行重新解析，而其他条款则保持对您产生法律效力和约束。</li>
                 </ul>
                 </div>
-                <div class="msg">如果您对此条款有任何疑问或建议，欢迎通过邮件联系我们：2324@2324.us.kg</div>
+                <div class="msg">如果您对此页面有任何疑问或建议，欢迎通过邮件联系我们：<a href="mailto:2324@2324.us.kg">2324@2324.us.kg</a></div>
             </div>
         </div>
     </body>

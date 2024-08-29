@@ -7,14 +7,36 @@
 本网站采用<a href="https://mit-license.org/">MIT协议</a>开源
 
 ## 下载在线客户端
+### 正式版
 
-<a href="https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io/releases">GitHub下载链接</a>(GitHub下载链接打不开请使用Gitee下载链接)
+<a href="https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io/releases/download/APP_3.0/app-release.apk">GitHub下载</a>(GitHub下载链接打不开请使用Gitee下载)
 <br>
-<a href="https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io/releases">Gitee下载链接</a>(GitHub下载链接打不开用这个)
+<a href="https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io/releases/download/APP_1.0/app-release.apk">Gitee下载</a>(GitHub下载链接打不开用这个)
 <br>
-<a href="https://wwf.lanzouq.com/b00g2i0luj">蓝奏云下载链接</a>(提取码1145)
+<a href="https://wwtc.lanzouq.com/if8Ur28nxmdc">蓝奏云下载</a>(提取码1145)
 <br>
-<a href="https://www.123pan.com/s/J1k7Vv-WWVN3.html?">123网盘下载链接</a>(提取码1145)
+<a href="https://www.123pan.com/s/J1k7Vv-ejVN3">123网盘下载</a>(提取码1145)
+
+### debug版
+
+<a href="https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io/releases/download/APP_3.0/app-debug.apk">GitHub下载</a>(GitHub下载链接打不开请使用Gitee下载)
+<br>
+<a href="https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io/releases/download/APP_1.0/app-debug.apk">Gitee下载</a>(GitHub下载链接打不开用这个)
+<br>
+<a href="https://wwtc.lanzouq.com/is06l28nxmod">蓝奏云下载</a>(提取码1145)
+<br>
+<a href="https://www.123pan.com/s/J1k7Vv-tjVN3">123网盘下载</a>(提取码1145)
+
+## 下载安卓应用项目源码
+
+<a href="https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io/releases/download/APP_3.0/app.zip">GitHub下载</a>(GitHub下载链接打不开请使用Gitee下载)
+<br>
+<a href="https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io/releases/download/APP_1.0/app.zip">Gitee下载</a>(GitHub下载链接打不开用这个)
+<br>
+<a href="https://wwtc.lanzouq.com/ingFw28nxnmh">蓝奏云下载</a>(提取码1145)
+<br>
+<a href="https://www.123pan.com/s/J1k7Vv-ijVN3">123网盘下载</a>(提取码1145)
+
 
 ## 开源地址
 

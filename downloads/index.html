@@ -7,64 +7,64 @@
         <style>
             html,
             body {
-                background-color: #f6f8f9;
+                background-color: #f0f2f5;
+                font-family: 'Arial', sans-serif;
+                color: #333;
             }
 
             .main {
                 background-color: #ffffff;
                 width: 90%;
                 max-width: 1600px;
-                margin-left: auto;
-                margin-right: auto;
+                margin: 20px auto;
                 padding: 24px 40px;
                 padding-bottom: 400px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
             }
 
             .container {
-                padding: 90px 75px;
+                padding: 50px 75px;
             }
 
-            p {
-                -webkit-margin-before: 0;
-                -webkit-margin-after: 0;
-                line-height: 24px;
-                font-size: 16px;
-            }
-            li{
-                line-height: 24px;
+            p, li {
+                line-height: 1.6;
+                font-size: 18px;
+                margin-bottom: 10px;
             }
 
             .desc {
                 text-align: left;
-                font-size: 16px;
+                font-size: 18px;
             }
 
             .title {
                 text-align: center;
-                font-size: 22px;
+                font-size: 32px;
                 padding-bottom: 40px;
+                color: #444;
             }
 
             .content-title {
                 text-align: left;
-                font-size: 20px;
+                font-size: 28px;
+                color: #555;
+                margin-top: 20px;
             }
 
             .list {
                 list-style: none;
+                padding-left: 0;
             }
 
-            .content-list-item {
-                text-indent: 2em;
-            }
-
-            .orderly-list-item {
+            .content-list-item, .orderly-list-item {
                 margin-left: 2em;
                 position: relative;
             }
 
             .orderly-list-item .index {
                 position: absolute;
+                left: -2em;
             }
 
             .orderly-list-item-desc {
@@ -79,129 +79,90 @@
                 padding-top: 40px;
             }
 
-            .list-item-inner {
-                position: relative;
-                margin-left: 2em;
-                padding-right: 2em;
-            }
-
-            .index-inner {
-                position: absolute;
-            }
-
-            .list-item-desc-inner {
-                display: inline-block;
-                position: relative;
-                left: 1em;
-            }
-
-            .content .desc {
-                text-indent: 2em;
-            }
-
-            .informal {
-                padding-top: 40px;
-            }
-
-            .table {
-                width: 1400px;
-                margin: 0 auto;
-                white-space: normal;
-                position: relative;
-            }
-
-            .table-row {
-                margin: 0;
-                padding: 0;
-                border-left: 1px dashed #778899;
-                border-top: 1px dashed #778899;
-                position: relative;
-                white-space: normal;
-                position: absolute;
-            }
-
-            .table-column {
-                text-align: left;
-                font-size: 17px;
-                display: inline-block;
-                margin: 0;
-                padding: 15px 15px;
-                border-right: 1px dashed #778899;
-                border-bottom: 1px dashed #778899;
-                position: relative;
-                width: 670px;
-                background: 0 0;
-                white-space: normal;
-            }
-
-            .table-row.left .table-column {
-                border-right: none;
-            }
-
-            .table-row.right {
-                left: 700px;
-            }
-
-            .gaizhang {
-                height: 100px;
-            }
-
-            .qianming {
-                height: 60px;
-            }
-
-            .inner-span {
-                padding-left: 2em;
-            }
-            .msg{
+            .msg {
                 background-color: #fcf8e3;
-                border-color: #faebcc;
+                border: 1px solid #faebcc;
                 color: #8a6d3b;
                 padding: 15px;
-                margin-bottom: 20px;
-                border: 1px solid transparent;
+                margin-top: 20px;
                 border-radius: 4px;
+                text-align: center;
             }
+
+            a {
+                color: #007bff;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            a:hover {
+                color: #0056b3;
+                text-decoration: underline;
+            }
+
             @media screen and (max-width: 760px) {
-            	.container{
+                .container {
                     padding: 0;
                 }
-                .main{
+                .main {
                     padding: 24px;
                     box-sizing: border-box;
                     margin: 0;
                     width: 100%;
                 }
-                .orderly-list-item{
-                        margin-left: 1.2em;
+                .orderly-list-item {
+                    margin-left: 1.2em;
                 }
             }
         </style>
     </head>
-
     <body>
         <div class="main">
             <div class="container">
-                <h1 class="title">源代码下载</h1>
+                <h1 class="title">下载中心</h1>
                 <div class="content">
                     <h2 class="content-title">网站源码下载</h2>
-                    <p class="orderly-list-item-desc">GitHub下载<a href="https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io">https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io</a></p>
+                    <p class="orderly-list-item-desc"><a href="https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io">GitHub下载</a>(GitHub下载链接打不开请使用Gitee下载)</p>
                     <br>
-                    <p class="orderly-list-item-desc">Gitee下载<a href="https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io">https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io</a></p>
-                    </p>
+                    <p class="orderly-list-item-desc"><a href="https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io">Gitee下载</a>(GitHub下载链接打不开用这个)</p>
                 </div>
                 <div class="content">
-                    <h2 class="content-title">网站APP下载</h2>
+                    <h1 class="content-title">网站APP下载</h1>
                     <div class="orderly-list">
                         <div class="orderly-list-item">
-                            <p class="orderly-list-item-desc"><a href="https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io/releases">GitHub下载链接</a>(GitHub下载链接打不开请使用Gitee下载链接)</p>
-                            <br>
-                            <p class="orderly-list-item-desc"><a href="https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io/releases">Gitee下载链接</a>(GitHub下载链接打不开用这个)</p>
-                            <br>
-                            <p class="orderly-list-item-desc"><a href="https://wwf.lanzouq.com/b00g2i0luj">蓝奏云下载链接</a>(提取码1145)</p>
-                            <br>
-                            <p class="orderly-list-item-desc"><a href="https://www.123pan.com/s/J1k7Vv-WWVN3.html?">123网盘下载链接</a>(提取码1145)</p>
-                <div class="msg">如果您对此页面有任何疑问或建议，欢迎通过邮件联系我们：2324@2324.us.kg</div>
+                            <h2>正式版</h2>
+                            <div>
+                                <a href="https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io/releases/download/APP_3.0/app-release.apk">GitHub下载</a>(GitHub下载链接打不开请使用Gitee下载)
+                                <br>
+                                <a href="https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io/releases/download/APP_1.0/app-release.apk">Gitee下载</a>(GitHub下载链接打不开用这个)
+                                <br>
+                                <a href="https://wwtc.lanzouq.com/if8Ur28nxmdc">蓝奏云下载</a>(提取码1145)
+                                <br>
+                                <a href="https://www.123pan.com/s/J1k7Vv-ejVN3">123网盘下载</a>(提取码1145)
+
+                                <h2>debug版</h2>
+
+                                <a href="https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io/releases/download/APP_3.0/app-debug.apk">GitHub下载</a>(GitHub下载链接打不开请使用Gitee下载)
+                                <br>
+                                <a href="https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io/releases/download/APP_1.0/app-debug.apk">Gitee下载</a>(GitHub下载链接打不开用这个)
+                                <br>
+                                <a href="https://wwtc.lanzouq.com/is06l28nxmod">蓝奏云下载</a>(提取码1145)
+                                <br>
+                                <a href="https://www.123pan.com/s/J1k7Vv-tjVN3">123网盘下载</a>(提取码1145)
+                            </div>
+                        </div>
+                            <div class="content"></div>
+                            <h2 class="content-title">安卓客户端项目源码下载</h2>
+                                <p class="orderly-list-item-desc"><a href="https://github.com/jdi8hveginhe114/jdi8hveginhe114.github.io/releases/download/APP_3.0/app.zip">GitHub下载</a>(GitHub下载链接打不开请使用Gitee下载)</p>
+                                <br>
+                                <p class="orderly-list-item-desc"><a href="https://gitee.com/coldestbow30654/jdi8hveginhe114.github.io/releases/download/APP_1.0/app.zip">Gitee下载</a>(GitHub下载链接打不开用这个)</p>
+                                <br>
+                                <p class="orderly-list-item-desc"><a href="https://wwtc.lanzouq.com/ingFw28nxnmh">蓝奏云下载</a>(提取码1145)</p>
+                                <br>
+                                <p class="orderly-list-item-desc"><a href="https://www.123pan.com/s/J1k7Vv-ijVN3">123网盘下载链接</a>(提取码1145)</p>
+                                <br>
+                            </div>
+                <div class="msg">如果您对此页面有任何疑问或建议，欢迎通过邮件联系我们：<a href="mailto:2324@2324.us.kg">2324@2324.us.kg</a></div>
             </div>
         </div>
     </body>
