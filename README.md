@@ -6,9 +6,9 @@
 
 本网站采用<a href="https://mit-license.org/">MIT协议</a>开源
 
-## 下载在线客户端
+<a href="https://pan.huang1111.cn/s/K9kbxcY">下载项目相关文件</a>看不懂用下面的链接下载
 
-<a href="https://pan.huang1111.cn/s/K9kbxcY">debug版release版APP项目源码下载链接</a>看不懂用下面的链接下载
+## 下载在线客户端
 
 ### 正式版(推荐！！！)
 
