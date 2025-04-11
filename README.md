@@ -1,6 +1,6 @@
 # 2324官网源码
 
-<a href="https://2324.us.kg">本站链接</a>
+<a href="https://2324.dpdns.org">本站链接</a>
 
 ## 本站开源协议
 
